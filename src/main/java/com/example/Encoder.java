@@ -22,12 +22,14 @@ public class Encoder {
   }
 
   public static int strIdToNum(String id) {
-    assert(id.length() == 5);
+    int len = id.length();
+    assert( len == 5 || len == 6);
     int res = 0;
+    int start = (len == 6) ? 1 : 0;
     final int ordA = (int)'A', ordZ = (int)'Z';
     final int ord0 = (int)'0', ord9 = (int)'9';
 
-    for (int i=0; i < id.length(); ++i) {
+    for (int i=start; i < id.length(); ++i) {
       int c = (int) id.charAt(i);
       int v = 0;
       if (c>=ordA && c<=ordZ) { v = c-ordA+10; } else

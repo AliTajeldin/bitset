@@ -15,8 +15,8 @@ public class App {
         Random rand = new Random();
         for (int i = 0; i < numPositive; ++i) {
             c.set(Encoder.numIdToStr(rand.nextInt(size)));
-            c.set("000AA");
         }
+        c.set("000AA");
         c.save(fileName);
     }
 
